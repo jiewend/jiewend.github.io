@@ -153,8 +153,54 @@ var _hmt = _hmt || [];
 <ul>
 <li>打开浏览器，输入username.github.io，就可以看到你的博客网页啦！！！</li>
 </ul>
-<p>第一次写教程，写得不好，有很多地方都可以多加完善，比如可以插入图片，使教程更容易读懂。比如可以更换网站的主题，比如可以加入博客评论功能等等，有时间再来完善。</p>
+<p>第一次写教程，写得不好，有很多地方都可以多加完善，比如可以插入图片，使教程更容易读懂。比如可以更换网站的主题，比如可以加入博客评论功能、博文分类、博文标签等等，有时间再来完善。</p>
 <p>最后的最后，附上教程原帖网址<a href="https://github.com/limedroid/HexoLearning" target="_blank" rel="external">原帖网址1</a> <a href="https://yanyinhong.github.io/2017/05/01/How-to-build-blog-with-hexo-and-github/" target="_blank" rel="external">原帖网址2</a></p>
+<p>#更新2017-07-08</p>
+<ul>
+<li>增加外链插入图片方案<br>markdown的图片插入格式为<strong>“[text](Picture Url “”)”</strong>,主要部分为Link Url，之前一直的想法是使用本地Url插入，生成PDF供阅读。现在的使用场景不能使用本地URL了，因此需要使用在线URL，目前的解决方案为使用github托管图片。<ul>
+<li>新建仓库名为<strong>markPicture</strong></li>
+<li>使用git克隆仓库，在该文件夹内放入图片后依序<ul>
+<li><strong>git add.</strong></li>
+<li><strong>git commit -m “balabal”</strong></li>
+<li><strong>git push</strong></li>
+</ul>
+</li>
+<li>在仓库中选中图片，复制URL<br>原帖地址<a href="https://www.zhihu.com/question/21065229" target="_blank" rel="external">在线URL</a></li>
+</ul>
+</li>
+<li>更换主题<br>为了配合评论功能的使用，连主题也一同更换了，本次更换的主题是Tinnypp。<ul>
+<li>下载地址为<a href="https://github.com/levonlin/Tinnypp" target="_blank" rel="external">Tinnypp</a></li>
+<li>将压缩包内文件拷到博客文件夹的themes目录下</li>
+<li>更改博客文件夹内的_config,将theme 项后面主题名改为Tinnypp</li>
+<li>额外踩的坑：主题内也需要修改一些信息，原文没给出<ul>
+<li>tinnypp文件夹内的_config.yml内的需要改的项目为<strong>intro_line1、intro_line2、github</strong>，分别代表名字、简介、和github用户名</li>
+<li>duoshuo项的enable改为false，多说已经下线了，用不了</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>原帖地址<a href="https://github.com/limedroid/HexoLearning" target="_blank" rel="external">更换主题</a></p>
+<ul>
+<li>增加评论功能<br>评论功能实现用了<strong>DISQUS</strong><ul>
+<li>注册DISQUS账号<a href="https://disqus.com/" target="_blank" rel="external">disqus</a></li>
+<li>配置DISQUS，GET STARTED-&gt;I want to install Disqus on my site -&gt;填写Websit Name、Category、Language 都随意填 -&gt; Create Site -&gt; Configure Disqus -&gt; 填写 Website URL：你的博客地址 -&gt; Complete Setup。配置结束。</li>
+<li>配置HEXO <ul>
+<li>修改博客目录下_config.yml 里的disqus_shortname: username</li>
+<li>修改themes/Tinnypp/layout/_partial/post/comment.ejs，全部替换为<blockquote>
+<p>&lt;% if (page.comments){ %&gt;<br><section id="comment"><br>&lt;% if(config.disqus_shortname) { %&gt;<br><div id="disqus_thread"><br><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><br></div><br>&lt;% } %&gt;<br></section><br>&lt;% } %&gt;</p>
+</blockquote>
+</li>
+<li>修改themes/Tinnypp/layout/_partial/after_footer.ejs，将多说部分替换为，建议搜索“duoshuo”<blockquote>
+<p>&lt;% if ((page.layout == ‘post’ || page.layout == ‘page’) &amp;&amp; config.disqus_shortname &amp;&amp; page.comments){ %&gt;<br><script type="text/javascript"><br>var disqus_shortname = ‘&lt;%= config.disqus_shortname %&gt;’;<br>var disqus_config = function () {<br>this.page.url = ‘&lt;%= config.url %&gt;/&lt;%= page.path %&gt;’;<br>this.page.identifier = ‘/&lt;%= page.path %&gt;’;<br>this.page.title = ‘&lt;%= page.title %&gt;’;<br>};<br>(function(){<br>var d = document;<br>var dsq = d.createElement(‘script’);<br>dsq.type = ‘text/javascript’;<br>dsq.async = true;<br>dsq.src = ‘//‘ + disqus_shortname + ‘.disqus.com/&lt;% if (page.comments){ %&gt;embed.js&lt;% } else { %&gt;count.js&lt;% } %&gt;’;<br>(d.head || d.body).appendChild(dsq);<br>})();<br></script><br>&lt;% } %&gt;</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>原帖地址<a href="http://www.jianshu.com/p/c4f65ebe23ad" target="_blank" rel="external">评论功能</a> </p>
   
 	</div>
 		<footer class="article-footer clearfix">
