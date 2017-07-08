@@ -187,14 +187,8 @@ var _hmt = _hmt || [];
 <li>配置DISQUS，GET STARTED-&gt;I want to install Disqus on my site -&gt;填写Websit Name、Category、Language 都随意填 -&gt; Create Site -&gt; Configure Disqus -&gt; 填写 Website URL：你的博客地址 -&gt; Complete Setup。配置结束。</li>
 <li>配置HEXO <ul>
 <li>修改博客目录下_config.yml 里的disqus_shortname: username</li>
-<li>修改themes/Tinnypp/layout/_partial/post/comment.ejs，全部替换为<blockquote>
-<p>&lt;% if (page.comments){ %&gt;<br><section id="comment"><br>&lt;% if(config.disqus_shortname) { %&gt;<br><div id="disqus_thread"><br><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><br></div><br>&lt;% } %&gt;<br></section><br>&lt;% } %&gt;</p>
-</blockquote>
-</li>
-<li>修改themes/Tinnypp/layout/_partial/after_footer.ejs，将多说部分替换为，建议搜索“duoshuo”<blockquote>
-<p>&lt;% if ((page.layout == ‘post’ || page.layout == ‘page’) &amp;&amp; config.disqus_shortname &amp;&amp; page.comments){ %&gt;<br><script type="text/javascript"><br>var disqus_shortname = ‘&lt;%= config.disqus_shortname %&gt;’;<br>var disqus_config = function () {<br>this.page.url = ‘&lt;%= config.url %&gt;/&lt;%= page.path %&gt;’;<br>this.page.identifier = ‘/&lt;%= page.path %&gt;’;<br>this.page.title = ‘&lt;%= page.title %&gt;’;<br>};<br>(function(){<br>var d = document;<br>var dsq = d.createElement(‘script’);<br>dsq.type = ‘text/javascript’;<br>dsq.async = true;<br>dsq.src = ‘//‘ + disqus_shortname + ‘.disqus.com/&lt;% if (page.comments){ %&gt;embed.js&lt;% } else { %&gt;count.js&lt;% } %&gt;’;<br>(d.head || d.body).appendChild(dsq);<br>})();<br></script><br>&lt;% } %&gt;</p>
-</blockquote>
-</li>
+<li>修改themes/Tinnypp/layout/_partial/post/comment.ejs，全部替换为<br>> &lt;% if (page.comments){ %&gt;<br><section id="comment"><br>&lt;% if(config.disqus_shortname) { %&gt;<br><div id="disqus_thread"><br><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><br></div><br>&lt;% } %&gt;<br></section><br>&lt;% } %&gt;</li>
+<li>修改themes/Tinnypp/layout/_partial/after_footer.ejs，将多说部分替换为，建议搜索“duoshuo”<br>> &lt;% if ((page.layout == ‘post’ || page.layout == ‘page’) &amp;&amp; config.disqus_shortname &amp;&amp; page.comments){ %&gt;<br><script type="text/javascript"><br>var disqus_shortname = ‘&lt;%= config.disqus_shortname %&gt;’;<br>var disqus_config = function () {<br>this.page.url = ‘&lt;%= config.url %&gt;/&lt;%= page.path %&gt;’;<br>this.page.identifier = ‘/&lt;%= page.path %&gt;’;<br>this.page.title = ‘&lt;%= page.title %&gt;’;<br>};<br>(function(){<br>var d = document;<br>var dsq = d.createElement(‘script’);<br>dsq.type = ‘text/javascript’;<br>dsq.async = true;<br>dsq.src = ‘//‘ + disqus_shortname + ‘.disqus.com/&lt;% if (page.comments){ %&gt;embed.js&lt;% } else { %&gt;count.js&lt;% } %&gt;’;<br>(d.head || d.body).appendChild(dsq);<br>})();<br></script><br>&lt;% } %&gt;</li>
 </ul>
 </li>
 </ul>
