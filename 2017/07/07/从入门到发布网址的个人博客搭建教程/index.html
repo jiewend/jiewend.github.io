@@ -101,7 +101,10 @@
 <meta property="og:description" content="把大象放进冰箱需要三步：打开冰箱，把大象放进去，关上冰箱博客也是三步：前期准备，编写博客，上传网页 前期准备 学习markdown编辑Markdown 是一种轻量级标记语言，创始人为约翰·格鲁伯（John Gruber）。它允许人们“使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML(或者HTML)文档”。这种语言吸收了很多在电子邮件中已有的纯文本标记的特性。本教程的博客编写是基于mar">
 <meta property="og:image" content="https://raw.githubusercontent.com/jiewend/markdownPicture/master/%E6%89%93%E5%BC%80node.JPG">
 <meta property="og:image" content="https://raw.githubusercontent.com/jiewend/markdownPicture/master/%E4%B8%8A%E4%BC%A0%E7%BD%91%E9%A1%B5%E6%88%90%E5%8A%9F.JPG">
-<meta property="og:updated_time" content="2017-07-08T13:09:31.175Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/jiewend/markdownPicture/master/%E5%8F%8B%E8%A8%80%E4%BB%A3%E7%A0%81.JPG">
+<meta property="og:image" content="https://raw.githubusercontent.com/jiewend/markdownPicture/master/%E9%85%8D%E7%BD%AE%E5%8F%8B%E8%A8%80.JPG">
+<meta property="og:image" content="https://raw.githubusercontent.com/jiewend/markdownPicture/master/%E8%AF%84%E8%AE%BA%E6%A1%86%E6%95%88%E6%9E%9C.JPG">
+<meta property="og:updated_time" content="2017-07-10T03:56:08.807Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从入门到发布网址的个人博客搭建教程">
 <meta name="twitter:description" content="把大象放进冰箱需要三步：打开冰箱，把大象放进去，关上冰箱博客也是三步：前期准备，编写博客，上传网页 前期准备 学习markdown编辑Markdown 是一种轻量级标记语言，创始人为约翰·格鲁伯（John Gruber）。它允许人们“使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML(或者HTML)文档”。这种语言吸收了很多在电子邮件中已有的纯文本标记的特性。本教程的博客编写是基于mar">
@@ -425,6 +428,15 @@
 </li>
 </ul>
 <p>原帖地址<a href="http://www.jianshu.com/p/c4f65ebe23ad" target="_blank" rel="external">评论功能</a> </p>
+<h1 id="更新2017-07-10"><a href="#更新2017-07-10" class="headerlink" title="更新2017-07-10"></a>更新2017-07-10</h1><ul>
+<li>更换评论平台为友言<br>发现disqus平台对国内用户的支持不太好，如果没有翻墙的话，评论框加载不出来，因此将评论平台更换为国内能正常使用的友言。<ul>
+<li><strong>注册友言账号</strong>，注册地址为<a href="http://www.uyan.cc/" target="_blank" rel="external">友言</a>，注册完成后会弹出一个代码框如下，将代码复制好备用<br><img src="https://raw.githubusercontent.com/jiewend/markdownPicture/master/%E5%8F%8B%E8%A8%80%E4%BB%A3%E7%A0%81.JPG" alt="友言代码"></li>
+<li><strong>下载主题next</strong>，由于教程很多都基于<strong>next</strong>主题，因此将主题换成<strong>next</strong>会较方便，下载地址<br><a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">next</a>，将文件复制到博客目录下的themes目录中。  </li>
+<li><strong>配置主题</strong>，打开文件\themes\next_config ，在最后一行之前加入复制好的友言代码。如下图<br><img src="https://raw.githubusercontent.com/jiewend/markdownPicture/master/%E9%85%8D%E7%BD%AE%E5%8F%8B%E8%A8%80.JPG" alt="配置友言"></li>
+<li><strong>hexo clean , hexo g , hexo s</strong> ，在浏览器内输入<strong><a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a></strong>， 打开一篇文章后就能看到评论框了。效果如下<br><img src="https://raw.githubusercontent.com/jiewend/markdownPicture/master/%E8%AF%84%E8%AE%BA%E6%A1%86%E6%95%88%E6%9E%9C.JPG" alt="评论框效果"></li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -493,27 +505,16 @@
 
 
           
-  
-
-
   <div class="comments" id="comments">
     
   </div>
   
-  
-  
-     <div class="comments" id="comments">
-       
-         <div id="disqus_thread">
-           <noscript>
-             Please enable JavaScript to view the
-             <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
-           </noscript>
-         </div>
-       
-     </div>
-   
-  
+     
+        <!-- UY BEGIN -->
+			<div id="uyan_frame"></div>
+			<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2138342"></script>
+		<!-- UY END -->
+    
   
   
 
@@ -600,7 +601,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前期准备"><span class="nav-number">1.</span> <span class="nav-text">前期准备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#本地编写博客"><span class="nav-number">2.</span> <span class="nav-text">本地编写博客</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#上传网页到github"><span class="nav-number">3.</span> <span class="nav-text">上传网页到github</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更新2017-07-08"><span class="nav-number">4.</span> <span class="nav-text">更新2017-07-08</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前期准备"><span class="nav-number">1.</span> <span class="nav-text">前期准备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#本地编写博客"><span class="nav-number">2.</span> <span class="nav-text">本地编写博客</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#上传网页到github"><span class="nav-number">3.</span> <span class="nav-text">上传网页到github</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更新2017-07-08"><span class="nav-number">4.</span> <span class="nav-text">更新2017-07-08</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更新2017-07-10"><span class="nav-number">5.</span> <span class="nav-text">更新2017-07-10</span></a></li></ol></div>
             
 
           </div>
@@ -739,7 +740,8 @@
 
 
 
-  
+
+
 
 
   
