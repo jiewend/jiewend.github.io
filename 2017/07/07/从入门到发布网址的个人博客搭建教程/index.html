@@ -27,8 +27,6 @@
     
 
   
-    <link href="/css/font-awesome.min.css" rel="stylesheet">
-    
   
 
     <link rel="stylesheet" href="/css/style.css">
@@ -71,11 +69,6 @@ var _hmt = _hmt || [];
 						<li><a href="/Tinnypp/archives">归档</a></li>
 					
 					<li>
-					
-						<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
-						<label>Search</label>
-						<input type="text" id="st-search-inpu" maxlength="20" placeholder="Search" />
-						</form>
 					
 					</li>
                 <!--<li><div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div></li>-->
@@ -226,8 +219,13 @@ var _hmt = _hmt || [];
 	</div>
 		<footer class="article-footer clearfix">
 
-
-
+<section id="comment">
+  
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+  
+</section>
 
 <div class="article-share" id="share">
 
@@ -252,16 +250,6 @@ var _hmt = _hmt || [];
 </nav>
 
 	
-<section class="comment">
-	
-	<div class="ds-thread" data-title="从入门到发布网址的个人博客搭建教程" data-thread-key="从入门到发布网址的个人博客搭建教程" data-author-key="jiewend" data-url="http://yoursite.com/post/从入门到发布网址的个人博客搭建教程"></div>
-	
-</section>
-	<!-- UY BEGIN -->
-		<div id="uyan_frame"></div>
-		<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2138342"></script>
-	<!-- UY END -->
-
 
 </div>  
     </div>
@@ -270,7 +258,7 @@ var _hmt = _hmt || [];
 		<span>Powered by <a href="https://github.com/hexojs/hexo">Hexo</a> and theme by 
 		<a href="https://github.com/levonlin/Tinnypp">Tinnypp</a>.</span>
 		
-			<span>© Levon</span>
+			<span>© Jiewend</span>
 		
 	<div>
 </div></footer>
@@ -406,17 +394,22 @@ $(document).ready(function(){
 </script>
 
 
-<script type="text/javascript">
-  var duoshuoQuery = {short_name:"tinnypp"};
-  (function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = '//static.duoshuo.com/embed.js';    //change to ds.src = '/js/embed.js'; to add useragent for duoshuo
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] 
-    || document.getElementsByTagName('body')[0]).appendChild(ds);
-  })();
-</script> 
+    <script type="text/javascript">
+    var disqus_shortname = 'jiewend';
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2017/07/07/从入门到发布网址的个人博客搭建教程/';
+        this.page.identifier = '/2017/07/07/从入门到发布网址的个人博客搭建教程/';
+        this.page.title = '从入门到发布网址的个人博客搭建教程';
+    };
+    (function(){
+      var d = document;
+      var dsq = d.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (d.head || d.body).appendChild(dsq);
+    })();
+    </script>
 
 
 
