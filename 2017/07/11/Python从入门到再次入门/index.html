@@ -99,7 +99,7 @@ var _hmt = _hmt || [];
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title"></strong>
-		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Python-基础"><span class="toc-number">1.</span> <span class="toc-text">Python 基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据类型和变量"><span class="toc-number">1.1.</span> <span class="toc-text">数据类型和变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字符串和编码"><span class="toc-number">1.2.</span> <span class="toc-text">字符串和编码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#list和tuple"><span class="toc-number">1.3.</span> <span class="toc-text">list和tuple</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条件判断"><span class="toc-number">1.4.</span> <span class="toc-text">条件判断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#循环"><span class="toc-number">1.5.</span> <span class="toc-text">循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dict和set"><span class="toc-number">1.6.</span> <span class="toc-text">dict和set</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#函数"><span class="toc-number">2.</span> <span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#调用函数"><span class="toc-number">2.1.</span> <span class="toc-text">调用函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#定义函数"><span class="toc-number">2.2.</span> <span class="toc-text">定义函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数的参数"><span class="toc-number">2.3.</span> <span class="toc-text">函数的参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#递归函数"><span class="toc-number">2.4.</span> <span class="toc-text">递归函数</span></a></li></ol></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Python-基础"><span class="toc-number">1.</span> <span class="toc-text">Python 基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据类型和变量"><span class="toc-number">1.1.</span> <span class="toc-text">数据类型和变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字符串和编码"><span class="toc-number">1.2.</span> <span class="toc-text">字符串和编码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#list和tuple"><span class="toc-number">1.3.</span> <span class="toc-text">list和tuple</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条件判断"><span class="toc-number">1.4.</span> <span class="toc-text">条件判断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#循环"><span class="toc-number">1.5.</span> <span class="toc-text">循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dict和set"><span class="toc-number">1.6.</span> <span class="toc-text">dict和set</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#函数"><span class="toc-number">2.</span> <span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#定义函数"><span class="toc-number">2.1.</span> <span class="toc-text">定义函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数的参数"><span class="toc-number">2.2.</span> <span class="toc-text">函数的参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#递归函数"><span class="toc-number">2.3.</span> <span class="toc-text">递归函数</span></a></li></ol></li></ol>
 		</div>
 		
 		<h1 id="Python-基础"><a href="#Python-基础" class="headerlink" title="Python 基础"></a>Python 基础</h1><p>注释为 #  </p>
@@ -135,16 +135,18 @@ var _hmt = _hmt || [];
 </ul>
 </li>
 <li><h2 id="list和tuple"><a href="#list和tuple" class="headerlink" title="list和tuple"></a>list和tuple</h2><ul>
-<li><strong>list</strong>：即列表，是一种有序的集合，同一列表中的元素类型可以不同，可以添加和删除其中的元素，<strong>形式为letter = [‘a’, ‘b’ , ‘c’]</strong></li>
-<li><p>索引 ：类似C里的数组，如letter[0]是第一个元素，<strong>特点，索引可以为负</strong>，letter[-1]是最后一个元素</p>
+<li><p><strong>list</strong>：即列表，是一种有序的集合，同一列表中的元素类型可以不同，可以添加和删除其中的元素，<strong>形式为letter = [‘a’, ‘b’ , ‘c’]</strong></p>
 <ul>
+<li>索引 ：类似C里的数组，如letter[0]是第一个元素，<strong>特点，索引可以为负</strong>，letter[-1]是最后一个元素</li>
 <li>添加元素： letter。append(‘d’)，追加元素；letter.insert(1, ‘e’)将‘e’插入索引为1的位置</li>
-<li><p>删除元素： letter.pop()，删除末尾的元素；letter.pop(0)，删除索引为1的元素</p>
-<p>  <strong>tuple</strong>：即元组，是另一种有序列表，一旦初始化就不能修改<strong>如果把列表比作变量，那元组就是常量</strong>，形式为number = (1, 2, 3)</p>
+<li>删除元素： letter.pop()，删除末尾的元素；letter.pop(0)，删除索引为1的元素</li>
+</ul>
 </li>
+<li><p><strong>tuple</strong>：即元组，是另一种有序列表，一旦初始化就不能修改<strong>如果把列表比作变量，那元组就是常量</strong>，形式为number = (1, 2, 3)</p>
+<ul>
 <li>索引：与列表一样number[0]为第一个元素</li>
 <li>append(),insert(),pop()？不存在的</li>
-<li>特殊情况：空的tuple number = （）； <strong>一个元素的turple number = (1, )</strong> ；**turple元素可以是列表</li>
+<li>特殊情况：空的tuple number = （）； <strong>一个元素的turple number = (1, )</strong> ；<strong>turple元素可以是列表</strong></li>
 </ul>
 </li>
 </ul>
@@ -167,38 +169,24 @@ var _hmt = _hmt || [];
 <li><h2 id="dict和set"><a href="#dict和set" class="headerlink" title="dict和set"></a>dict和set</h2><ul>
 <li><p>dict：Python内置字典，使用键-值（key-value）存储，查找速度极快，<strong>用空间来换取时间</strong>，字典形式如下，使用大括号</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>d = &#123;<span class="string">'Michael'</span>: <span class="number">95</span>, <span class="string">'Bob'</span>: <span class="number">75</span>, <span class="string">'Tracy'</span>: <span class="number">85</span>&#125;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>d[<span class="string">'Michael'</span>]</div><div class="line"><span class="number">95</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>增加元素：d[‘Jesse’] = 100;</p>
-</li>
+<ul>
+<li>增加元素：d[‘Jesse’] = 100;</li>
 <li>删除元素：单个 del d[‘Jesse’]；全部清空 d.clear(); 删除字典del d;</li>
 <li>修改元素：d[‘Bob’] = 80;</li>
 <li>查找元素 &gt;&gt;d[‘Bob’]</li>
+</ul>
+</li>
 <li><p>set：集合，一组没有重复元素的元素集合，基本形式如下</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>s = set([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s</div><div class="line">&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>增加元素：add(key)方法可以添加元素到set，重复添加相同元素无效果</p>
-</li>
+<ul>
+<li>增加元素：add(key)方法可以添加元素到set，重复添加相同元素无效果</li>
 <li>删除元素：remove(key)方法可以删除元素</li>
 </ul>
 </li>
 </ul>
-<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><ul>
-<li><h2 id="调用函数"><a href="#调用函数" class="headerlink" title="调用函数"></a>调用函数</h2><ul>
-<li><p>定义一个函数要使用<strong>def</strong>语句，后接函数名、函数参数和冒号，然后在缩进块中编写函数体，缩进块结束即函数结束，例子如下</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_abs</span><span class="params">(x)</span>:</span></div><div class="line">    <span class="keyword">if</span> x &gt;= <span class="number">0</span>:</div><div class="line">        <span class="keyword">return</span> x</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> -x</div></pre></td></tr></table></figure>
-</li>
-<li><p>可以没有<strong>return</strong>语句，或return后不接变量，也会有返回结果none</p>
-</li>
-<li><p>返回多个值：，例子如下，实际上返回的是一个tuple元组！</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> math</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">move</span><span class="params">(x, y, step, angle=<span class="number">0</span>)</span>:</span></div><div class="line">    nx = x + step * math.cos(angle)</div><div class="line">    ny = y - step * math.sin(angle)</div><div class="line">    <span class="keyword">return</span> nx, ny</div></pre></td></tr></table></figure>
-</li>
-<li><p>将hello（）函数定义在world.py文件中，可以使用<strong>from world import hello</strong>导入该函数，有点像c中的include</p>
-</li>
-<li>pass占位符：占着空函数，使程序能运行起来</li>
-<li>参数检查：Python解释器只能检查参数个数，不能检查参数类型，可以使用内置函数<strong>isinstance()</strong>实现参数检查，如下可以使出错信息更加详细，易于debug<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_abs</span><span class="params">(x)</span>:</span></div><div class="line">    <span class="keyword">if</span> <span class="keyword">not</span> isinstance(x, (int, float)):</div><div class="line">        <span class="keyword">raise</span> TypeError(<span class="string">'bad operand type'</span>)</div><div class="line">    <span class="keyword">if</span> x &gt;= <span class="number">0</span>:</div><div class="line">        <span class="keyword">return</span> x</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> -x</div></pre></td></tr></table></figure>
 </li>
 </ul>
-</li>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><ul>
 <li><h2 id="定义函数"><a href="#定义函数" class="headerlink" title="定义函数"></a>定义函数</h2><ul>
 <li><p>定义函数要使用<strong>def</strong>语句，后面依次写出函数名，小括号，小括号种的参数，最后写上冒号，然后在缩进块中编写函数，如下</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_abs</span><span class="params">(x)</span>:</span></div><div class="line">    <span class="keyword">if</span> x &gt;= <span class="number">0</span>:</div><div class="line">        <span class="keyword">return</span> x</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> -x</div></pre></td></tr></table></figure>
