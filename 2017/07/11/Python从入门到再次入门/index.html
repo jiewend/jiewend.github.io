@@ -99,7 +99,7 @@ var _hmt = _hmt || [];
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title"></strong>
-		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Python-基础"><span class="toc-number">1.</span> <span class="toc-text">Python 基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据类型和变量"><span class="toc-number">1.1.</span> <span class="toc-text">数据类型和变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字符串和编码"><span class="toc-number">1.2.</span> <span class="toc-text">字符串和编码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#list和tuple"><span class="toc-number">1.3.</span> <span class="toc-text">list和tuple</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条件判断"><span class="toc-number">1.4.</span> <span class="toc-text">条件判断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#循环"><span class="toc-number">1.5.</span> <span class="toc-text">循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dict和set"><span class="toc-number">1.6.</span> <span class="toc-text">dict和set</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#函数"><span class="toc-number">2.</span> <span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#定义函数"><span class="toc-number">2.1.</span> <span class="toc-text">定义函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数的参数"><span class="toc-number">2.2.</span> <span class="toc-text">函数的参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#递归函数"><span class="toc-number">2.3.</span> <span class="toc-text">递归函数</span></a></li></ol></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Python-基础"><span class="toc-number">1.</span> <span class="toc-text">Python 基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据类型和变量"><span class="toc-number">1.1.</span> <span class="toc-text">数据类型和变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字符串和编码"><span class="toc-number">1.2.</span> <span class="toc-text">字符串和编码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#list和tuple"><span class="toc-number">1.3.</span> <span class="toc-text">list和tuple</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条件判断"><span class="toc-number">1.4.</span> <span class="toc-text">条件判断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#循环"><span class="toc-number">1.5.</span> <span class="toc-text">循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dict和set"><span class="toc-number">1.6.</span> <span class="toc-text">dict和set</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#函数"><span class="toc-number">2.</span> <span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#定义函数"><span class="toc-number">2.1.</span> <span class="toc-text">定义函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数的参数"><span class="toc-number">2.2.</span> <span class="toc-text">函数的参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#递归函数"><span class="toc-number">2.3.</span> <span class="toc-text">递归函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#模块"><span class="toc-number">3.</span> <span class="toc-text">模块</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用模块"><span class="toc-number">3.1.</span> <span class="toc-text">使用模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装第三方模块"><span class="toc-number">3.2.</span> <span class="toc-text">安装第三方模块</span></a></li></ol></li></ol>
 		</div>
 		
 		<h1 id="Python-基础"><a href="#Python-基础" class="headerlink" title="Python 基础"></a>Python 基础</h1><p>注释为 #  </p>
@@ -241,6 +241,42 @@ var _hmt = _hmt || [];
 <li>递归：优点是逻辑清晰，缺点是过深的调用会导致栈溢出</li>
 <li><p>尾递归：尾递归就是把当前的运算结果（或路径）放在参数里传给下层函数，可以对递归进行尾递归优化防止栈溢出</p>
 <p><strong>个人理解是尾递归不需要保存本函数的运行状态，递归需要保存本函数的运行状态</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h1><p>使用模块有什么好处？<br>最大的好处是大大提高了代码的可维护性。其次，编写代码不必从零开始。当一个模块编写完毕，就可以被其他地方引用。我们在编写程序的时候，也经常引用其他模块，包括Python内置的模块和来自第三方的模块。<br>使用模块还可以避免函数名和变量名冲突。相同名字的函数和变量完全可以分别存在不同的模块中，因此，我们自己在编写模块时，不必考虑名字会与其他模块冲突</p>
+<ul>
+<li><h2 id="使用模块"><a href="#使用模块" class="headerlink" title="使用模块"></a><strong>使用模块</strong></h2><ul>
+<li><p>Python的内置模块</p>
+  <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">import sys</div><div class="line"></div><div class="line">def test():</div><div class="line">    args = sys.argv</div><div class="line">    if len(args)==1:</div><div class="line">        print('Hello, world!')</div><div class="line">    elif len(args)==2:</div><div class="line">        print('Hello, %s!' % args[1])</div><div class="line">    else:</div><div class="line">        print('Too many arguments!')</div><div class="line"></div><div class="line">if __name__=='</div><div class="line">    test()</div></pre></td></tr></table></figure>
+<ul>
+<li>使用模块的第一步：使用<strong>import</strong>语句导入该模块，则有sys变量指向该模块，sys模块有一个argv变量，用list存储了命令行的所有参数。argv至少有一个元素，因为第一个参数永远是该.py文件的名称</li>
+</ul>
+</li>
+<li>作用域<ul>
+<li>公开变量（public）:正常的函数和变量名是公开的，如：abc,12d,Hi等</li>
+<li>特殊变量：类似“<strong>abc</strong>”,可以被直接引用，但留作特殊用途，一般不要使用这种变量名</li>
+<li>非公开变量（private）：类似“_abc”,这样的变量则不应该被直接引用，作为私有变量<br><strong>但是，Python并没有一种方法可以完全限制访问private函数或变量</strong>，这是一种好的编程习惯</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h2 id="安装第三方模块"><a href="#安装第三方模块" class="headerlink" title="安装第三方模块"></a><strong>安装第三方模块</strong></h2><ul>
+<li>在Python中，安装第三方模块是使用包管理工具pip完成的，如果操作系统是MAC或Linux，则无需安装pip，windows则需要安装pip，参考<a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/0014316090478912dab2a3a9e8f4ed49d28854b292f85bb000" target="_blank" rel="external">安装Python</a></li>
+<li><p>使用第三方模块前需要先安装模块</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install Pillow</div></pre></td></tr></table></figure>
+<p>耐心等待下载安装完后就可以使用该模块了</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>im = Image.open(<span class="string">'test.png'</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(im.format, im.size, im.mode)</div><div class="line">PNG (<span class="number">400</span>, <span class="number">300</span>) RGB</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>im.thumbnail((<span class="number">200</span>, <span class="number">100</span>))</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>im.save(<span class="string">'thumb.jpg'</span>, <span class="string">'JPEG'</span>)</div></pre></td></tr></table></figure>
+</li>
+<li><p>模块搜索路径：Python解释器会搜索当前目录、所有已安装的内置模块和第三方模块，搜索路径存放在sys模块的path变量中，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> sys</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>sys.path</div><div class="line">[<span class="string">''</span>, <span class="string">'/Library/Frameworks/Python.framework/Versions/3.4/lib/python34.zip'</span>, <span class="string">'/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4'</span>, <span class="string">'/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/plat-darwin'</span>, <span class="string">'/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/lib-dynload'</span>, <span class="string">'/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/site-packages'</span>]</div></pre></td></tr></table></figure>
+</li>
+<li><p>添加搜索目录</p>
+<ul>
+<li>修改sys.path</li>
+<li>设置环境变量PYTHONPATH，该环境变量的内容会被自动添加到模块搜索路径中。设置方式与设置Path环境变量类似。注意只需要添加你自己的搜索路径，Python自己本身的搜索路径不受影响</li>
+</ul>
 </li>
 </ul>
 </li>
