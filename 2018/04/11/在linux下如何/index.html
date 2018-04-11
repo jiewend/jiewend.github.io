@@ -1,0 +1,565 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>在linux下如何.... | jiewend的小想法</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="jiewend">
+    
+    <meta name="description" content="抢救ubuntu死机
+也许可行的方法
+
+
+服务器后台跑程序
+连接服务器 ssh user@ip
+安装screen: yum install screen
+新建窗口 screen -S kk
+运行程序ping www.baidu.com
+后台运行窗口 ctrl + a + d
+断开服务器 : exit">
+    
+    
+    
+    
+    <link rel="alternative" href="/Tinnypp/atom.xml" title="jiewend的小想法" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/myLogo.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/myLogo.png">
+    
+
+  
+  
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?d182ed77fc48758bf45a33835ee35745";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+      <script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','.............Add your swiftype userID...............');
+</script>
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="jiewend的小想法">jiewend的小想法</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+                    <ul>
+					 
+						<li><a href="/Tinnypp">首页</a></li>
+					
+						<li><a href="/Tinnypp/archives">归档</a></li>
+					
+					<li>
+					
+					</li>
+                <!--<li><div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div></li>-->
+
+				</ul>
+			</nav>	
+</div>
+    </header>
+    <div id="container" class="clearfix">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2018/04/11/在linux下如何/" title="在linux下如何...." itemprop="url">在linux下如何....</a>
+  </h1>
+  <p class="article-time">
+    <time datetime="2018-04-11T06:22:56.000Z" itemprop="datePublished">2018-04-11</time>
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title"></strong>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#抢救ubuntu死机"><span class="toc-number">1.</span> <span class="toc-text">抢救ubuntu死机</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#服务器后台跑程序"><span class="toc-number">2.</span> <span class="toc-text">服务器后台跑程序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#xls-to-mat"><span class="toc-number">3.</span> <span class="toc-text">xls to mat</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#octave环境配置"><span class="toc-number">4.</span> <span class="toc-text">octave环境配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装qq"><span class="toc-number">5.</span> <span class="toc-text">安装qq</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装网易云音乐"><span class="toc-number">6.</span> <span class="toc-text">安装网易云音乐</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ssh登陆远程服务器"><span class="toc-number">7.</span> <span class="toc-text">ssh登陆远程服务器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#单用户模式修改root密码"><span class="toc-number">8.</span> <span class="toc-text">单用户模式修改root密码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#启动-ssh-服务器"><span class="toc-number">9.</span> <span class="toc-text">启动 ssh 服务器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#增加用户"><span class="toc-number">10.</span> <span class="toc-text">增加用户</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#给用户root权限"><span class="toc-number">11.</span> <span class="toc-text">给用户root权限</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#查看用户"><span class="toc-number">12.</span> <span class="toc-text">查看用户</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#正确地复制ssh公钥到gitlab中"><span class="toc-number">13.</span> <span class="toc-text">正确地复制ssh公钥到gitlab中</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在一台电脑上使多个git帐号（github-gitlab等等）"><span class="toc-number">14.</span> <span class="toc-text">在一台电脑上使多个git帐号（github,gitlab等等）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#终端显示git分支"><span class="toc-number">15.</span> <span class="toc-text">终端显示git分支</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git-修改远程仓库"><span class="toc-number">16.</span> <span class="toc-text">git 修改远程仓库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#设置终端补全大小写不敏感"><span class="toc-number">17.</span> <span class="toc-text">设置终端补全大小写不敏感</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装mySQLdb"><span class="toc-number">18.</span> <span class="toc-text">安装mySQLdb</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#更换本机dhcp的ip地址"><span class="toc-number">19.</span> <span class="toc-text">更换本机dhcp的ip地址</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#edit-grub"><span class="toc-number">20.</span> <span class="toc-text">edit grub</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装QT4-7-X"><span class="toc-number">21.</span> <span class="toc-text">安装QT4.7.X</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#修改文件编码格式"><span class="toc-number">22.</span> <span class="toc-text">修改文件编码格式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#修改-g-版本"><span class="toc-number">23.</span> <span class="toc-text">修改 g++ 版本</span></a></li></ol>
+		</div>
+		
+		<ul>
+<li><h1 id="抢救ubuntu死机"><a href="#抢救ubuntu死机" class="headerlink" title="抢救ubuntu死机"></a>抢救ubuntu死机</h1><ul>
+<li><a href="https://www.jianshu.com/p/36fb9eed82a3" target="_blank" rel="external">也许可行的方法</a></li>
+</ul>
+</li>
+<li><h1 id="服务器后台跑程序"><a href="#服务器后台跑程序" class="headerlink" title="服务器后台跑程序"></a>服务器后台跑程序</h1><ul>
+<li>连接服务器 ssh user@ip</li>
+<li>安装screen: yum install screen</li>
+<li>新建窗口 screen -S kk</li>
+<li>运行程序ping www.baidu.com</li>
+<li>后台运行窗口 ctrl + a + d</li>
+<li>断开服务器 : exit</li>
+<li>重连服务器 ssh user@ip</li>
+<li>重连窗口 : screen -r kk</li>
+<li>一些有用的命令<ul>
+<li>列出窗口 screen -list</li>
+<li>终结窗口： screen -wipe 或在窗口中 exit</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h1 id="xls-to-mat"><a href="#xls-to-mat" class="headerlink" title="xls to mat"></a>xls to mat</h1><ul>
+<li>%get the values in the Excel using xlsread.<br>  [num,txt,raw] = xlsread(filename,sheet,xlRange);</li>
+<li>%combine data as you want:<br>  AllData={txt;num};%as you want</li>
+<li>%save in mat file</li>
+<li>save(matfileName,’AllData’);%In your matfile name</li>
+</ul>
+</li>
+<li><h1 id="octave环境配置"><a href="#octave环境配置" class="headerlink" title="octave环境配置"></a>octave环境配置</h1><ul>
+<li>octave 安装<ul>
+<li>sudo add-apt-repository ppa:octave/stable</li>
+<li>sudo apt update</li>
+<li>sudo apt-get install octave</li>
+<li><a href="https://stackoverflow.com/questions/45972413/submitting-assignment-on-coursera-ml-in-octave" target="_blank" rel="external">参考</a></li>
+</ul>
+</li>
+<li>oxtave 安装扩展包<ul>
+<li>下载扩展包文件，类似io-2.4.8.tar.gz</li>
+<li>pkg install io</li>
+<li>pkg load io</li>
+</ul>
+</li>
+<li>保存matlab mat格式<ul>
+<li>save -mat7-binary ‘filename’ ‘var1’ ‘var2’</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h1 id="安装qq"><a href="#安装qq" class="headerlink" title="安装qq"></a>安装qq</h1><ul>
+<li><a href="https://github.com/askme765cs/Wine-QQ/wiki" target="_blank" rel="external">教程</a></li>
+<li>需要装好wine（大概800M，已放弃）</li>
+</ul>
+</li>
+<li><h1 id="安装网易云音乐"><a href="#安装网易云音乐" class="headerlink" title="安装网易云音乐"></a>安装网易云音乐</h1><ul>
+<li><a href="http://www.jianshu.com/p/b1f70d2edef8" target="_blank" rel="external">教程</a></li>
+</ul>
+</li>
+<li><h1 id="ssh登陆远程服务器"><a href="#ssh登陆远程服务器" class="headerlink" title="ssh登陆远程服务器"></a>ssh登陆远程服务器</h1><ul>
+<li></li>
+<li><a href="http://songmingyao.com/Ubuntu%20%E8%BF%9C%E7%A8%8B%E7%99%BB%E9%99%86%E6%9C%8D%E5%8A%A1%E5%99%A8%20ssh%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE/" target="_blank" rel="external">教程</a></li>
+<li><p><a href="https://www.linuxdashen.com/ssh-key%EF%BC%9A%E4%B8%A4%E4%B8%AA%E7%AE%80%E5%8D%95%E6%AD%A5%E9%AA%A4%E5%AE%9E%E7%8E%B0ssh%E6%97%A0%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95" target="_blank" rel="external">另一个教程</a></p>
+<ul>
+<li><p>在本地电脑生成SSH密钥和公钥</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa       \\rsa表示加密类型，rsa为默认值</div><div class="line">ssh-keygen -b 4096 -t rsa   \\rsa的默认长度是2048，可以使用本条命令指定长度为4096</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>    - 生成SSH Key过程中汇要求指定文件用于保存密钥，可以按enter使用默认文件
+    - 需要输入密码用于加密SSH Key， 至少20位，密码可以不设
+    - 生成的密钥在 **~/.ssh/id_rsa** 中，公钥保存在**~/.ssh/id_rsa.pub**
+- 将SSH公钥上传到远程服务器
+    - 在本地电脑上输入
+    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-copy-id username@remote-server</div></pre></td></tr></table></figure>
+</code></pre><ul>
+<li><h1 id="单用户模式修改root密码"><a href="#单用户模式修改root密码" class="headerlink" title="单用户模式修改root密码"></a>单用户模式修改root密码</h1><ul>
+<li>在选择系统时按 e 进入</li>
+<li>选择第二个选项按 e 编辑启动项</li>
+<li>在最后加上 single 后，回车，按b启动，进入单用户模式</li>
+<li>输入 passwd 修改 root 密码</li>
+</ul>
+</li>
+<li><h1 id="启动-ssh-服务器"><a href="#启动-ssh-服务器" class="headerlink" title="启动 ssh 服务器"></a>启动 ssh 服务器</h1><ul>
+<li>安装ssh服务 sudo apt-get install openssh-server</li>
+<li>开启ssh服务 sudo /etc/init.d/ssh start</li>
+<li>查看本机ip地址 sudo ifconfig</li>
+</ul>
+</li>
+<li><h1 id="增加用户"><a href="#增加用户" class="headerlink" title="增加用户"></a>增加用户</h1><ul>
+<li>adduser tommy</li>
+<li>passwd tommy</li>
+</ul>
+</li>
+<li><h1 id="给用户root权限"><a href="#给用户root权限" class="headerlink" title="给用户root权限"></a>给用户root权限</h1><ul>
+<li><p>方法一：修改 /etc/sudoers 文件，找到下面一行，把前面的注释（#）去掉</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">## Allows people in group wheel to run all commands</div><div class="line">%wheel    ALL=(ALL)    ALL</div><div class="line">然后修改用户，使其属于root组（wheel），命令如下：</div><div class="line">#usermod -g root tommy</div><div class="line">修改完毕，现在可以用tommy帐号登录，然后用命令 su - ，即可获得root权限进行操作。</div></pre></td></tr></table></figure>
+</li>
+<li><p>方法二：修改 /etc/sudoers 文件，找到下面一行，在root下面添加一行，如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">## Allow root to run any commands anywhere</div><div class="line">root    ALL=(ALL)     ALL</div><div class="line">tommy   ALL=(ALL)     ALL</div><div class="line">修改完毕，现在可以用tommy帐号登录，然后用命令 su - ，即可获得root权限进行操作。</div></pre></td></tr></table></figure>
+</li>
+<li><p>方法三，修改/etc/passwd 文件，每一行的格式为　　　　</p>
+<p>用户名: 密码 : uid  : gid :用户描述：主目录：登陆shell</p>
+<ul>
+<li>将改用户的uid改为 0 ，保存后切换用户就是root用户</li>
+</ul>
+</li>
+<li><p>用useradd新增的用户不能直接用ssh远程访问，需要修改ssh相关配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">如下：</div><div class="line">vi /etc/ssh/sshd_config </div><div class="line">添加</div><div class="line">AllowUsers root@192.168.1.32 admin</div><div class="line">多个用户用空格隔开</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><h1 id="查看用户"><a href="#查看用户" class="headerlink" title="查看用户"></a>查看用户</h1><ul>
+<li>groups 查看当前登陆用户的组内成员</li>
+<li>whoami 查看当前登录用户名</li>
+<li>/etc/group文件包含所有组</li>
+<li>/etc/shadow和/etc/passwd系统存在的所有用户名</li>
+</ul>
+</li>
+<li><h1 id="正确地复制ssh公钥到gitlab中"><a href="#正确地复制ssh公钥到gitlab中" class="headerlink" title="正确地复制ssh公钥到gitlab中"></a>正确地复制ssh公钥到gitlab中</h1><ul>
+<li>避免用vim或gedit打开文件，用鼠标选中全部复制然后粘贴，貌似gitlab添加公钥时不会去除行之间的空格（github没有这个问题），而使用vim或gedit打开复制会连行间空格一起复制，结果就是添加的公钥不对</li>
+<li>正确的做法应该是使用xclip<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xclip -sel clip &lt; gitlab_jiewend.pub</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><h1 id="在一台电脑上使多个git帐号（github-gitlab等等）"><a href="#在一台电脑上使多个git帐号（github-gitlab等等）" class="headerlink" title="在一台电脑上使多个git帐号（github,gitlab等等）"></a>在一台电脑上使多个git帐号（github,gitlab等等）</h1><ul>
+<li>生成不同的密钥对(非必须，可以都使用同一个密钥)<ul>
+<li>ssh-keygen </li>
+<li>ssh-add keyname</li>
+</ul>
+</li>
+<li><p>编辑 ~/.ssh/config 文件</p>
+<ul>
+<li>配置如下,HostName是服务器的地址，User是用户名，PreferredAuthentications照抄即可，IdentityFile是使用的密钥对的私钥<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Host github.com</div><div class="line">    HostName github.com</div><div class="line">    User smallajax@foxmail.com</div><div class="line">    PreferredAuthentications publickey</div><div class="line">    IdentityFile /home/Workspace/ssh/id_rsa_github</div><div class="line">Host gitlib.com</div><div class="line">    HostName gitlib.com</div><div class="line">    User smallajax@foxmail.com</div><div class="line">    PreferredAuthentications publickey</div><div class="line">    IdentityFile id_rsa_gitlib</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>在网站中添加密钥对的私钥</p>
+<ul>
+<li>注意，复制公钥时要使用正确的方法：xclip</li>
+</ul>
+</li>
+<li><p>测试ssh-key配置</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -T git@github.com</div></pre></td></tr></table></figure>
+</li>
+<li><p>配置 git 仓库,或直接git clone</p>
+<ul>
+<li>进入目标仓库文件夹<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --local user.name &quot;yourname&quot;</div><div class="line">git config --local user.email &quot;youremail&quot;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><a href="http://blog.csdn.net/yanzhenjie1003/article/details/69487932?locationNum=4&amp;fps=1" target="_blank" rel="external">参考博客</a>        </p>
+</li>
+</ul>
+</li>
+<li><h1 id="终端显示git分支"><a href="#终端显示git分支" class="headerlink" title="终端显示git分支"></a>终端显示git分支</h1><ul>
+<li>cd ~</li>
+<li>sudo vim .bashrc</li>
+<li><p>在文件末尾增加以下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function git_branch &#123;</div><div class="line">   branch=&quot;`git branch 2&gt;/dev/null | grep &quot;^\*&quot; | sed -e &quot;s/^\*\ //&quot;`&quot;</div><div class="line">   if [ &quot;$&#123;branch&#125;&quot; != &quot;&quot; ];then</div><div class="line">       if [ &quot;$&#123;branch&#125;&quot; = &quot;(no branch)&quot; ];then</div><div class="line">           branch=&quot;(`git rev-parse --short HEAD`...)&quot;</div><div class="line">       fi</div><div class="line">       echo &quot; ($branch)&quot;</div><div class="line">   fi</div><div class="line">&#125;</div><div class="line"></div><div class="line">export PS1=&apos;\u@\h \[\033[01;36m\]\W\[\033[01;32m\]$(git_branch)\[\033[00m\] \$ &apos;</div></pre></td></tr></table></figure>
+</li>
+<li><p>:wq</p>
+</li>
+<li>source ./.bashrc</li>
+<li>以上</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><h1 id="git-修改远程仓库"><a href="#git-修改远程仓库" class="headerlink" title="git 修改远程仓库"></a>git 修改远程仓库</h1><ul>
+<li>直接修改<ul>
+<li>git remote set-url origin NEWURL</li>
+</ul>
+</li>
+<li>先删后加 <ul>
+<li>git remote rm origin</li>
+<li>git remote add origin NEWURL</li>
+</ul>
+</li>
+<li>修改config文件<ul>
+<li>如果你的项目有加入版本控制，那可以到项目根目录下，查看隐藏文件夹， 发现.git文件夹，找到其中的config文件，就可以修改其中的git remote origin地址了。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h1 id="设置终端补全大小写不敏感"><a href="#设置终端补全大小写不敏感" class="headerlink" title="设置终端补全大小写不敏感"></a>设置终端补全大小写不敏感</h1><ul>
+<li>在~目录中创建.inputrc:</li>
+<li>打开.inputrc，添加如下设置：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">set completion-ignore-case on</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><h1 id="安装mySQLdb"><a href="#安装mySQLdb" class="headerlink" title="安装mySQLdb"></a>安装mySQLdb</h1><ul>
+<li>sudo apt-get install python-mysqldb</li>
+</ul>
+</li>
+<li><h1 id="更换本机dhcp的ip地址"><a href="#更换本机dhcp的ip地址" class="headerlink" title="更换本机dhcp的ip地址"></a>更换本机dhcp的ip地址</h1><ul>
+<li>修改本机的mac地址<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">(临时)</div><div class="line">sudo /sbin/ifconfig enp3s0 hw ether d0:67:e5:0e:b7:ee</div><div class="line">（永久）</div><div class="line">修改文件 /etc/rc.local</div><div class="line">ifconfig enp3s0 down</div><div class="line">ifconfig enp3s0 hw ether d0:67:e5:0e:b7:ea</div><div class="line">ifconfig enp3s0 up</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><h1 id="edit-grub"><a href="#edit-grub" class="headerlink" title="edit grub"></a>edit grub</h1><ul>
+<li>sudo gedit /etc/default/grub</li>
+<li>sudo update-grub</li>
+</ul>
+</li>
+<li><h1 id="安装QT4-7-X"><a href="#安装QT4-7-X" class="headerlink" title="安装QT4.7.X"></a>安装QT4.7.X</h1><ul>
+<li><a href="http://blog.csdn.net/loveqrbaby/article/details/16980753" target="_blank" rel="external">教程</a></li>
+</ul>
+</li>
+<li><h1 id="修改文件编码格式"><a href="#修改文件编码格式" class="headerlink" title="修改文件编码格式"></a>修改文件编码格式</h1><ul>
+<li>在vim下打开文件，执行:set ff=unix，存盘即可</li>
+<li>[教程]（<a href="http://www.cnblogs.com/pipelone/archive/2009/04/17/1437879.html）" target="_blank" rel="external">http://www.cnblogs.com/pipelone/archive/2009/04/17/1437879.html）</a></li>
+</ul>
+</li>
+<li><h1 id="修改-g-版本"><a href="#修改-g-版本" class="headerlink" title="修改 g++ 版本"></a>修改 g++ 版本</h1><ul>
+<li>sudo apt-get install gcc-4.7 g++-4.7</li>
+<li>/usr/bin$ sudo mv g++ g++.bak</li>
+<li>/usr/bin$sudo ln -s g++-4.4 g++</li>
+<li>[教程]（<a href="http://blog.csdn.net/happyer88/article/details/48135125）" target="_blank" rel="external">http://blog.csdn.net/happyer88/article/details/48135125）</a></li>
+</ul>
+</li>
+</ul>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+<section id="comment">
+  
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+  
+</section>
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2018/04/11/在linux下如何/" data-title="在linux下如何.... | jiewend的小想法" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2018/03/10/养鱼指南/"  title="养鱼指南">
+ <strong>Old:</strong><br/> 
+ <span>养鱼指南
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+</div>  
+    </div>
+    <footer><div id="footer" >
+	<div class="copyright">
+		<span>Powered by <a href="https://github.com/hexojs/hexo">Hexo</a> and theme by 
+		<a href="https://github.com/levonlin/Tinnypp">Tinnypp</a>.</span>
+		
+			<span>© Jiewend</span>
+		
+	<div>
+</div></footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  //back to top
+  function backToTop(){
+    var buttonHTML = $("<a href=\"#top\" id=\"back-top\">" + "<span>Back to Top</span></a>");
+    buttonHTML.appendTo($("body"));
+    var buttonToTop = $("#back-top");
+    // hide #back-top first
+    buttonToTop.hide();
+
+    // fade in #back-top
+    $(function() {
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                buttonToTop.fadeIn();
+            } else {
+                buttonToTop.fadeOut();
+            }
+        });
+        // scroll body to 0px on click
+        buttonToTop.click(function() {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 800);
+            return false;
+        });
+    });
+  }
+  backToTop();
+
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      ta = $('#toc.toc-aside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+        
+    }
+  });
+
+  var show = true;
+  c.click(function(){
+    if(show == true){
+        a.addClass('fadeOut').css('display', 'none');
+        ta.css('display', 'block').addClass('fadeIn');
+        m.addClass('moveMain');  
+    }else{
+        a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');     
+        ta.css('display', 'none'); 
+        m.removeClass('moveMain');
+        $('#toc.toc-aside').css('display', 'none');
+    }
+    show = !show;
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,240-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+    <script type="text/javascript">
+    var disqus_shortname = 'jiewend';
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2018/04/11/在linux下如何/';
+        this.page.identifier = '/2018/04/11/在linux下如何/';
+        this.page.title = '在linux下如何....';
+    };
+    (function(){
+      var d = document;
+      var dsq = d.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (d.head || d.body).appendChild(dsq);
+    })();
+    </script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+<script type="text/javascript">
+  function footerPosition() {
+    var contentHeight = document.documentElement.scrollHeight,
+        winHeight = window.innerHeight;
+    if(contentHeight <= winHeight) {
+      $('footer').addClass('fixed-bottom');
+    } else {
+      $('footer').removeClass('fixed-bottom');
+    }
+  }
+  footerPosition();
+  $(window).resize(footerPosition);
+</script>
+
+
+  </body>
+</html>

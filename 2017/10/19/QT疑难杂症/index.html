@@ -4,27 +4,31 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>windows10装系统指南 | jiewend的小想法</title>
+    <title>QT疑难杂症 | jiewend的小想法</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="jiewend">
     
-    <meta name="description" content="装机准备
-备份
+    <meta name="description" content="Qt 比较好的教程
+教程更改UI，但是运行时UI没有更新
 
-一个容量不小于 8G 的 U 盘，并将 U 盘内的东西备份好，装系统过程中需要将其格式化
+治标（实测可行）
+
+将编译目录（通常是build-projectname-Desktop_Qt_5_6_2_GCC64bit-Debug）下的ui*.h复制到源码目录下
 
 
-把原系统 C 盘中需要备份的东西备份好， C 盘在装系统过程中也会被格式化 
+
+rebuild  
 
 
-下载
 
-windows10装机大礼包密码：i3cs，大礼包包括下面三个部分
 
-UltraISO
 
-Ultr">
+
+
+治本（实测不行）
+
+项目设置文">
     
     
     
@@ -96,10 +100,10 @@ var _hmt = _hmt || [];
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/08/31/windows10装系统指南/" title="windows10装系统指南" itemprop="url">windows10装系统指南</a>
+      <a href="/2017/10/19/QT疑难杂症/" title="QT疑难杂症" itemprop="url">QT疑难杂症</a>
   </h1>
   <p class="article-time">
-    <time datetime="2017-08-31T01:47:39.627Z" itemprop="datePublished">2017-08-31</time>
+    <time datetime="2017-10-19T02:25:56.000Z" itemprop="datePublished">2017-10-19</time>
   </p>
 </header>
 	<div class="article-content">
@@ -107,42 +111,48 @@ var _hmt = _hmt || [];
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title"></strong>
-		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#装机准备"><span class="toc-number">1.</span> <span class="toc-text">装机准备</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#开始！"><span class="toc-number">2.</span> <span class="toc-text">开始！</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Qt-比较好的教程"><span class="toc-number">1.</span> <span class="toc-text">Qt 比较好的教程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#更改UI，但是运行时UI没有更新"><span class="toc-number">2.</span> <span class="toc-text">更改UI，但是运行时UI没有更新</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方案原网址如下："><span class="toc-number">2.1.</span> <span class="toc-text">解决方案原网址如下：</span></a></li></ol></li></ol>
 		</div>
 		
-		<h1 id="装机准备"><a href="#装机准备" class="headerlink" title="装机准备"></a>装机准备</h1><ul>
-<li>备份<ul>
-<li><ul>
-<li>一个容量不小于 8G 的 U 盘，并将 U 盘内的东西备份好，装系统过程中需要将其格式化</li>
+		<h1 id="Qt-比较好的教程"><a href="#Qt-比较好的教程" class="headerlink" title="Qt 比较好的教程"></a>Qt 比较好的教程</h1><ul>
+<li><a href="https://qtguide.ustclug.org/ch07-02.htm" target="_blank" rel="external">教程</a><h1 id="更改UI，但是运行时UI没有更新"><a href="#更改UI，但是运行时UI没有更新" class="headerlink" title="更改UI，但是运行时UI没有更新"></a>更改UI，但是运行时UI没有更新</h1></li>
+<li><ol>
+<li>治标（实测可行）<ul>
+<li><ol>
+<li>将编译目录（通常是build-projectname-Desktop_Qt_5_6_2_GCC<em>64bit-Debug）下的ui</em>*.h复制到源码目录下</li>
+</ol>
+</li>
+<li><ol>
+<li>rebuild  </li>
+</ol>
+</li>
 </ul>
 </li>
-<li>把原系统 C 盘中需要备份的东西备份好， C 盘在装系统过程中也会被格式化 </li>
-</ul>
+</ol>
 </li>
-<li><p>下载</p>
-<ul>
-<li><p>windows10装机大礼包<a href="http://pan.baidu.com/s/1bpEmNcr" target="_blank" rel="external">密码：i3cs</a>，大礼包包括下面三个部分</p>
-<ul>
-<li><p><a href="https://cn.ultraiso.net/xiazai.html" target="_blank" rel="external">UltraISO</a></p>
-<blockquote>
-<p>UltraISO软碟通是一款功能强大、方便实用、老牌优秀的光盘映像文件制作/编辑/转换工具：可以直接编辑ISO文件，从ISO中提取文件和目录；也可以从CD - ROM制作光盘映像或者将硬盘上的文件制作成ISO文件；同时还可以处理ISO文件的启动信息，从而制作可引导光盘。使用UltraISO，你可以随心所欲地制作/编辑/转换光盘映像文件。   </p>
+<li><ol>
+<li>治本（实测不行）<ul>
+<li><ol>
+<li>项目设置文件.pro内增加 UI_DIR=./UI</li>
+</ol>
+</li>
+<li><ol>
+<li>同时删除掉源代码目录中ui_*.h</li>
+</ol>
+</li>
+<li><ol>
+<li>clear all,-&gt;qmake-&gt;rebuilt all<h2 id="解决方案原网址如下："><a href="#解决方案原网址如下：" class="headerlink" title="解决方案原网址如下："></a>解决方案原网址如下：</h2><blockquote>
+<p><a href="http://blog.csdn.net/cokewei/article/details/6639960" target="_blank" rel="external">原帖地址</a></p>
 </blockquote>
 </li>
-<li><p>windows10 光盘映像</p>
-</li>
-<li>激活文件:用于激活系统</li>
-</ul>
+</ol>
 </li>
 </ul>
 </li>
-</ul>
-<h1 id="开始！"><a href="#开始！" class="headerlink" title="开始！"></a>开始！</h1><ul>
-<li>制作系统盘<ul>
-<li>安装 UltraISO ，使用大礼包里的安装文件安装</li>
-<li>打开后，可能出现【】,点击继续试用</li>
-</ul>
+</ol>
 </li>
 </ul>
+<hr>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -157,7 +167,7 @@ var _hmt = _hmt || [];
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2017/08/31/windows10装系统指南/" data-title="windows10装系统指南 | jiewend的小想法" data-tsina="null" class="share clearfix">
+  <div data-url="http://yoursite.com/2017/10/19/QT疑难杂症/" data-title="QT疑难杂症 | jiewend的小想法" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -167,18 +177,18 @@ var _hmt = _hmt || [];
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2017/10/19/QT疑难杂症/" title="QT疑难杂症">
+ <a href="/2018/01/09/机器学习相关/" title="机器学习相关">
   <strong>New:</strong><br/>
   <span>
-  QT疑难杂症</span>
+  机器学习相关</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2017/07/11/Python从入门到再次入门/"  title="Python从入门到再次入门">
+<a href="/2017/08/31/windows10装系统指南/"  title="windows10装系统指南">
  <strong>Old:</strong><br/> 
- <span>Python从入门到再次入门
+ <span>windows10装系统指南
 </span>
 </a>
 </div>
@@ -333,9 +343,9 @@ $(document).ready(function(){
     <script type="text/javascript">
     var disqus_shortname = 'jiewend';
     var disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2017/08/31/windows10装系统指南/';
-        this.page.identifier = '/2017/08/31/windows10装系统指南/';
-        this.page.title = 'windows10装系统指南';
+        this.page.url = 'http://yoursite.com/2017/10/19/QT疑难杂症/';
+        this.page.identifier = '/2017/10/19/QT疑难杂症/';
+        this.page.title = 'QT疑难杂症';
     };
     (function(){
       var d = document;
